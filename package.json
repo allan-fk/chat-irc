@@ -2,6 +2,7 @@
   "name": "chatbox-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://allanfk.frama.io/chat-irc",
   "dependencies": {
     "firebase": "^5.5.1",
     "prop-types": "^15.6.2",

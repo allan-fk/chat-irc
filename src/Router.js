@@ -7,7 +7,7 @@ import App from './App'
 export default class Router extends Component {
   render() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
             <Route exact path='/' component={Connexion} />
             <Route exact path='/pseudo/:pseudo' component={App} />
