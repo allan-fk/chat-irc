@@ -1,7 +1,7 @@
 image: node:10.15.1 # can be upgraded, depending on your node version used
  
 variables:
-  PUBLIC_URL: "/chat-irc"
+  PUBLIC_URL: /chat-irc
 pages:
   cache:
     paths:
