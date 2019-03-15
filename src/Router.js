@@ -7,13 +7,13 @@ import App from './App'
 export default class Router extends Component {
   render() {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
             <Route exact path='/' component={Connexion} />
             <Route exact path='/pseudo/:pseudo' component={App} />
             <Route component={error404} />
-        </Switch>
-    </BrowserRouter>
+          </Switch>
+        </BrowserRouter>
     )
   }
 }
