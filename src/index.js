@@ -1,20 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-//import App from './App'
 import * as serviceWorker from './serviceWorker'
 import Router from './Router'
 
-/*import {BrowserRouter, Route, Switch} from 'react-router-dom';
-
-const Root = () => {
-    <BrowserRouter>
-        <Switch>
-            <Route exact path='/' component={Connexion} />
-            <Route exact path='/pseudo/:pseudo' component={App} />
-        </Switch>
-    </BrowserRouter>
-}*/
 ReactDOM.render(<Router />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
