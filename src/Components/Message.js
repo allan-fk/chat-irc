@@ -14,6 +14,5 @@ const Message = ({ pseudo, message, isUser }) => {
       </p>
     )
   }*/
-}
 
 export default Message
