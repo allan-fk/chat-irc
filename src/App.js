@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-//import Connexion from './Components/Connexion'
+import Formulaire from './Components/Formulaire'
 
 class App extends Component {
   state = {
@@ -10,8 +10,12 @@ class App extends Component {
   render () {
     return (
       <div className='box'>
+        <div className='messages'>
+          Messages
+        </div>
         <h2>Bienvenue</h2>
         <h3>{this.state.url.substr(this.state.url.lastIndexOf('/') + 1)}</h3>
+        <Formulaire />
       </div>
     )
   }
