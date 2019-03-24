@@ -1,7 +1,9 @@
+
 import React, { Component } from 'react'
 import './App.css'
 import Formulaire from './Components/Formulaire'
 import Message from './Components/Message';
+import base from './DB'
 
 class App extends Component {
   state = {
@@ -13,6 +15,14 @@ class App extends Component {
     // https://framapic.org/WcvXExqufToA/OI2ua2svPCGB.png
     messages : {}, // objet vide qui prendra tout nos messages
   }
+
+  componentDidMount () {
+    base.syncState('/', {
+      context: this,
+      state: 'messages'
+    })
+  }
+
 
   addMessage = message => {
     // Ajout de message dans notre state message
