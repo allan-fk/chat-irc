@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component, createRef} from 'react'
 import './App.css'
 import Formulaire from './Components/Formulaire'
 import Message from './Components/Message';
@@ -16,6 +16,8 @@ class App extends Component {
     messages : {}, // objet vide qui prendra tout nos messages
   }
 
+  messagesRef = createRef()
+
   componentDidMount () {
     base.syncState('/', {
       context: this,
@@ -23,6 +25,10 @@ class App extends Component {
     })
   }
 
+  componentDidUpdate () {
+    const ref = this.messagesRef.current
+    ref.scrollTop = ref.scrollHeight
+  }
 
   addMessage = message => {
     // Ajout de message dans notre state message
@@ -48,12 +54,11 @@ class App extends Component {
       console.log(messages)
     return (
       <div className='box'>
-        <div className='messages'>
+        <div className='messages' ref={this.messagesRef}>
           <div className='message'>
             {messages}
           </div>
         </div>
-        <h2>Bienvenue</h2>
         <h3>{this.state.url.substr(this.state.url.lastIndexOf('/') + 1)}</h3>
         <Formulaire
         length={140}
