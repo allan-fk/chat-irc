@@ -40,13 +40,13 @@ class Formulaire extends Component {
 
     this.setState({ message, length })
   }
-/*
+
   handleKeyUp = event => {
     if (event.key === 'Enter') {
       this.createMessage()
     }
   }
-*/
+
   render () {
     return (
       <form
@@ -59,12 +59,11 @@ class Formulaire extends Component {
           value={this.state.message}
           // La value = notre state message
           onChange={this.handleChange}
-          //onKeyUp={this.handleKeyUp}*/
+          onKeyUp={this.handleKeyUp}
           required
           maxLength={this.props.length} />
         <div className='info' >
-        140
-          {/* this.state.length */}
+        {this.state.length}
         </div>
         <button type='submit' >
           Envoyer!

@@ -4,7 +4,7 @@ const Message = ({ pseudo, message, isUser }) => {
   //if (isUser(pseudo)) {
     return (
       <p className='user-message'>
-        Message
+        {pseudo + ' : ' + message}
       </p>
     )
   } /*else {

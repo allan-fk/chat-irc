@@ -19,22 +19,34 @@ class App extends Component {
     const messages = { ...this.state.messages}
     // messages = notre state.messages sous forme de tableau
     messages[`message-${Date.now()}`] = message
-    // Ajout d'une entrée dans notre tableau ayant pour index 'message-timestamp' et pour valeur -> message
+    // Ajout d'entrées dans notre tableau ayant pour index 'message-timestamp' et pour valeur -> message
+    // [{message-1553427676507 : 'notre messages'}, {message-1553427676517 : 'notre messages2'}...]
     this.setState({ messages })
     // Mise à jour de notre state messages
   }
   
   render () {
+    const messages = Object
+    // Pour chaque messages créer un component avec key, message, et pseudo en props
+      .keys(this.state.messages)
+      .map(key=>(
+        <Message
+          key = {key}
+          message = {this.state.messages[key].message}
+          pseudo = {this.state.messages[key].pseudo} />
+      ))
+      console.log(messages)
     return (
       <div className='box'>
         <div className='messages'>
-          <Message></Message>
-          <Message></Message>
-          <Message></Message>
+          <div className='message'>
+            {messages}
+          </div>
         </div>
         <h2>Bienvenue</h2>
         <h3>{this.state.url.substr(this.state.url.lastIndexOf('/') + 1)}</h3>
         <Formulaire
+        length={140}
         pseudo={this.state.pseudo}
         addMessage={this.addMessage}
         // envoie de notre fonction addMessage en props à notre component Formulaire
